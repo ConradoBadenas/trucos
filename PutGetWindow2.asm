@@ -176,40 +176,40 @@ ANTHRW   ld a,c     ;width = number of columns
          ld e,ixl
 ;Another Char in Screen
 ANTHCH     ld d,ixh ;display address
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;1
            inc d
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;2
            inc d
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;3
            inc d
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;4
            inc d
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;5
            inc d
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;6
            inc d
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;7
            inc d
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;8
            ld d,c   ;attribute address
-           ld a,(hl)
-           ld (de),a
+           ld a,(de)
+           ld (hl),a
            inc hl   ;9
            inc e
            djnz ANTHCH
