@@ -1,0 +1,34 @@
+explorador-graficos para ZX-Spectrum
+
+Copyright (C) 2024 Conrado Badenas
+
+Se incluyen dos ficheros con el programa:
+explorador-graficos.asm (8796B, código fuente, en ensamblador del Z80)
+explorador-graficos.bin ( 576B, programa compilado/ensamblado)
+
+Lo más importante es cargar este fichero en la dirección RAM 0x4000 = 16384
+(con el emulador fuse, File > Load binary data... > 0x4000 576)
+
+El programa se maneja con las teclas QAOPWSKL (modificar visualización)
+y Caps/Symbol/Space (activar la autorrepetición de QAOPWSKL).
+Es tan intuitivo que no hacen falta instrucciones: solo hay que usarlo.
+
+Pasos para explorar gráficos de un juego (o de otro programa):
+1. Inicie su emulador preferido con un juego interesante.
+2. Pause el emulador (en fuse, tecla Pausa).
+3. Cargue explorador-graficos.bin en 0x4000 (long.=576).
+4. Abra el debugger/depurador de su emulador.
+5. Haga que el registro PC valga 0x4000.
+   (en fuse, set z80:pc 0x4000 ) [véase Paso5.png]
+6. Salga del debugger, y despause el emulador si hace falta.
+   Ahora explorador-graficos se está ejecutando y la pantalla
+   puede haberse llenado de basura. [véase Paso6.png]
+7. Controle explorador-graficos con las teclas QAOPWSKL y Caps/Symbol/Space.
+   (más detalles en el código fuente, explorador-graficos.asm)
+8. Visualize los sprites del juego. [véase Paso8.png]
+
+Consejo:
+Si no le gustan los colores, modifique el valor que hay en la dirección RAM
+0x4002 (0x07 = no flash, no bright, paper black, ink white)
+cuando vaya por el paso 5 (después del 3, antes del 6)
+
